@@ -12,21 +12,18 @@ def subtract(a, b):
     return a - b
 
 def multiply(a, b):
-    """Multiply two numbers with input validation and logging."""
+    """Multiply two numbers with input validation"""
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Both arguments must be numbers")
-    
-    print(f"Multiplying {a} × {b}")  # Added logging
-    result = a * b
-    print(f"Result: {result}")
-    return result
+    return a * b
 
 def divide(a, b):
-    """Divide a by b with enhanced error handling."""
+    """Divide a by b with input validation"""
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Division requires numeric inputs")
     if b == 0:
-        raise ValueError(f"Cannot divide {a} by zero - division by zero is undefined")
+        raise ValueError("Cannot divide by zero")
+    return a / b
     
     print(f"Dividing {a} ÷ {b}")  # Added logging
     result = a / b
